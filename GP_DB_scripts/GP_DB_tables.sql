@@ -9,10 +9,10 @@ create schema dm;
 DROP TABLE IF EXISTS dds.shop;    
 CREATE TABLE dds.shop
 						(
-        		        kodfil BIGINT,
-                        sname VARCHAR(50),
-                        id_parent BIGINT,
-                        address VARCHAR(200)
+        		        kodfil bigint not null,
+                        sname varchar(50) null,
+                        id_parent bigint null,
+                        address varchar(200) null
                         )
 DISTRIBUTED REPLICATED;
   
@@ -23,7 +23,7 @@ DISTRIBUTED REPLICATED;
 DROP TABLE IF EXISTS dds.card;    
 CREATE TABLE dds.card
 						(
-        		        id_cft bigint,
+        		        id_cft bigint not null,
                         cname varchar(50) null,
                         sn varchar(20) null,
                         begin_date date null,
@@ -36,7 +36,7 @@ DISTRIBUTED REPLICATED;
 DROP TABLE IF EXISTS dds.product;    
 CREATE TABLE dds.product
 						(
-        		        id_code bigint,
+        		        id_code bigint not null,
                         pname text null,
                         model text null,
                         brand varchar(50) null
