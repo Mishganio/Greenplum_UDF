@@ -17,7 +17,7 @@ PART_DE = Variable.get("sales_partition_de")
 LOAD_MART_MONTH = f"select {STG_SCHEMA}.f_mart_month_load('sales_mart','{DM_SCHEMA}',{DM_MONTH});"
 LOAD_RFM_MART_MONTH = f"select {STG_SCHEMA}.f_mart_rfm_month_load('sales_rfm_mart','{DM_SCHEMA}',{DM_MONTH});"
 MD_TABLE_LOAD_QUERY = f"select {STG_SCHEMA}.f_full_load(%(tab_name)s,'{DDS_SCHEMA}','{STG_SCHEMA}', %(file_name)s,'crm-sales');"
-LOAD_PART_FACT = f"select {STG_SCHEMA}.f_exchange_partition_load('sales','{DDS_SCHEMA}','{STG_SCHEMA}','sdate',{PART_DB},{PART_DB}, 'sales_2023','crm-sales');"
+LOAD_PART_FACT = f"select {STG_SCHEMA}.f_exchange_partition_load('sales','{DDS_SCHEMA}','{STG_SCHEMA}','sdate',{PART_DB},{PART_DE}, 'sales_2023','crm-sales');"
 
 FULL_LOAD_TABLES = ['card', 'product', 'shop']
 FULL_LOAD_FILES = {

@@ -19,7 +19,7 @@ FULL_LOAD_FILES = {
     'shop': 'shop'
 }
 MD_TABLE_LOAD_QUERY = f"select {STG_SCHEMA}.f_full_load(%(tab_name)s,'{DDS_SCHEMA}','{STG_SCHEMA}', %(file_name)s,'crm-sales');"
-LOAD_PART_FACT = f"select {STG_SCHEMA}.f_exchange_partition_load('sales','{DDS_SCHEMA}','{STG_SCHEMA}','sdate',{PART_DB},{PART_DB}, 'sales_2023','crm-sales');"
+LOAD_PART_FACT = f"select {STG_SCHEMA}.f_exchange_partition_load('sales','{DDS_SCHEMA}','{STG_SCHEMA}','sdate',{PART_DB},{PART_DE}, 'sales_2023','crm-sales');"
 default_dag_args = {
     'depends_on_past': False,
     'owner': 'm.alexandrov',
